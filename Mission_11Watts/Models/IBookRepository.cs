@@ -1,6 +1,6 @@
 namespace Mission_11Watts.Models;
 
-public class IBookRepository
+public interface IBookRepository
 {
-    
+    public IQueryable<Book> Books { get; }
 }

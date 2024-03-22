@@ -1,6 +1,13 @@
 namespace Mission_11Watts.Models;
 
-public class EFBookRepository
+public class EFBookRepository : IBookRepository
 {
+    private BookstoreContext _context;
     
+    public EFBookRepository(BookstoreContext temp)
+    {
+        _context = temp;
+    }
+
+    public IQueryable<Book> Books => _context.Books;
 }
